@@ -1,0 +1,194 @@
+@charset "UTF-8";
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%
+}
+
+body{
+margin: 0;
+min-height: 100vh;
+display: flex;
+font-size: 1.6em;
+  /*IE9以前に対応する*/
+font-size: 0.625rem;
+line-height: 1.5;
+letter-spacing: 2px;
+color: #333;
+background-color: rgb(239, 239, 240);
+}
+main{
+  flex:1;
+}
+aside{
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  min-width: 250px;
+  background-color: #f3f1e7;
+}
+.logo_image{
+  margin-top: 50px;
+  text-align : center;
+  padding: auto;
+  font-size: 1.8rem;
+}
+.sidebar ul{
+  list-style: none;
+  padding: 10px;
+  margin: 70px;
+}
+.sidebar ul li{
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  text-align: center;
+  margin: 10px 0 ;
+  padding: 2px 0 2px 0;
+}
+.sidebar ul li a{
+  text-decoration: none;
+  color: #333;
+}
+.side_footer{
+  height:300px;
+  margin-top: auto;
+}
+.open,
+.close{
+  display: none;
+}
+.hamburger_menu{ 
+  position: absolute;  /*絶対値指定、座標で場所を決める為の指定左上からtop0left0*/
+  left: -50vw;
+}
+@media screen and (max-width:768px){
+  main{
+    margin-top: 50px;
+  }
+  .fa_size{
+    margin: 15px;
+    font-size: 3.5rem;
+  }
+  .open,
+  .close{
+    display: block;
+  }
+  .open {
+    position: absolute;
+}
+  aside{
+    position: absolute;
+    left: -250px;
+    height: 100%;
+      transition: all 0.3s;
+  }
+  .hamburger_menu:checked ~ aside{
+    left: 0;
+    z-index: 2;
+  }
+  .hamburger_menu:checked ~ .back {
+    position: absolute;/*絶対値で指定できるようにする*/
+    width: 100%;/*画面幅全体をタッチするとチェックが外れるようにする*/
+    height: 100%;/*チェックが外れるのはid forの関係のおかげ*/
+    background: rgba(0, 0, 0, 0.6) !important;
+    z-index: 1;
+    /*背景の黒を20%薄く表示する*/
+}
+
+}
+.pagetitle{
+  text-align: center;
+  border-bottom: 1px #333 solid;
+  padding-bottom: 5%;
+  width: 80%;
+  margin: 45px auto 0;
+}
+.pagetitle h1{
+  display: inline-block;
+  margin: 10px;
+  padding: 5px;
+  font-size: 3.5rem;
+  border-bottom: #333 solid 1px;
+}
+.pagetitle h3{
+  margin: 10px;
+  padding: 5px;
+  font-size: 0.8rem;
+}
+/*ここから登録フォーム*/
+.cp_iptxt {
+	width: 250px;
+	margin: 30px auto;
+}
+.formbox{
+  position: relative;
+  margin: 30px auto;
+}
+.form_title{
+  text-align: center;
+  font-size: 1.3rem;
+  margin: 2px;
+  font-weight: 500;
+}
+.cp_iptxt .sign_up {
+	font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: 100%;
+	margin: 8px 0;
+	padding: 0.3em;
+	transition: 0.3s;
+	border: 1px solid #333;
+	border-radius: 4px;
+	outline: none;
+}
+.cp_iptxt .sign_up:focus {
+	border-color: #92817a;
+}
+.cp_iptxt .sign_up {
+  padding-left: 40px;
+  background-color: #f9f9f9;
+}
+.cp_iptxt i {
+	position: absolute;
+	top: 28px;
+	left: 0;
+	padding: 9px 8px;
+	transition: 0.3s;
+	color: #aaaaaa;
+}
+.cp_iptxt .sign_up:focus + i {
+	color: #92817a;
+}
+
+.footer{
+  margin-block-start: 50px;
+  padding: 30px;
+  text-align: center;
+  background-color: #e2e2e2;
+  color: #333;
+}
+.footer ul{
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+
+.footer ul li{
+  display: inline-block;
+  margin: 5px;
+
+}
+.footer ul li a{
+  color: #333;
+  text-decoration: none;
+}
+footer ul li a:hover,
+footer ul li a:active{
+  color: #0f3057;
+  opacity: .7;
+}
+.small p{
+font-size: 0.7rem;
+}
